@@ -6,7 +6,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import org.testng.annotations.Test;
 
-public class Sample {
+public class SampleTest {
     @Test
     public void demo() {
         Playwright playwright = Playwright.create();
