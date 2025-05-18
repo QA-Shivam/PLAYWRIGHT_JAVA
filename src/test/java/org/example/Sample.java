@@ -1,12 +1,25 @@
 package org.example;
 
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.*;
 import org.testng.annotations.Test;
 
 public class Sample {
     @Test
-    public void demo()
-    {
-        System.out.println("Hello");
+    public void demo() {
+        Playwright playwright = Playwright.create();
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setChannel("chrome"));
+        Page page = browser.newPage();
+
+        // Navigate to the login page
+        page.navigate("https://www.orangehrm.com/");
+        String title = page.title();
+        System.out.println("Page title after login: " + title);
+        assert (title.equals("Human Resources Management Software | OrangeHRM HR Software"));
+        browser.close();
 
     }
 }
