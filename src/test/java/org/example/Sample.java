@@ -4,7 +4,6 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import static com.microsoft.playwright.assertions.PlaywrightAssertions.*;
 import org.testng.annotations.Test;
 
 public class Sample {
